@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="localDateTime" value="%d{yyyy-MM-dd}"/>
+    <property name="logPattern"
+              value="[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%C] [%X{tid}] [%X{sid}] - %m%n"/>
+    <property name="charSet" value="UTF-8"/>
+    <property name="maxHistory" value="7"/>
+
+    <!-- Springboot读取配置信息,详细使用参见 https://blog.csdn.net/AaronSimon/article/details/82710792 -->
+    <springProperty scope="context" name="log.additivity" source="log.additivity"/>
+    <springProperty scope="context" name="log.sql.level" source="log.sql.level"/>
+    <springProperty scope="context" name="log.web.level" source="log.web.level"/>
+
+    <property name="logPath" value="/web/logs/app/"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${logPattern}</pattern>
+        </encoder>
+    </appender>
+    <root level="${log.sql.level}">
+        <if condition='"${log.sql.level}".equals("DEBUG")'>
+            <then>
+                <appender-ref ref="CONSOLE"/>
+            </then>
+        </if>
+    </root>
+
+
+    <appender name="backup" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/backup.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logPath}/backup.log.${localDateTime}</fileNamePattern>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${logPattern}</pattern>
+            <charset>${charSet}</charset>
+        </encoder>
+    </appender>
+    <logger name="BACKUP_LOG" level="DEBUG" additivity="${log.additivity}">
+        <appender-ref ref="backup"/>
+    </logger>
+
+</configuration>

@@ -1,0 +1,7 @@
+log:
+  additivity: true
+  sql:
+    level: DEBUG
+  web:
+    level: DEBUG
+
