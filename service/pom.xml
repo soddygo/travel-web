@@ -18,6 +18,7 @@
         <dependency>
             <groupId>org.travle</groupId>
             <artifactId>dao</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 

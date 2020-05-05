@@ -22,6 +22,7 @@
         <dependency>
             <groupId>org.travle</groupId>
             <artifactId>service</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 

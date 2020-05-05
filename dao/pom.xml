@@ -17,6 +17,7 @@
         <dependency>
             <groupId>org.travle</groupId>
             <artifactId>common</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 
