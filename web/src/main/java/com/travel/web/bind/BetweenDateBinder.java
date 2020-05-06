@@ -1,6 +1,6 @@
 package com.travel.web.bind;
 
-import com.dmall.rdp.voucher.pojo.vo.voucher.BetweenDateVo;
+import com.travel.pojo.BetweenDateVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateUtils;
 

@@ -1,9 +1,9 @@
 package com.travel.web.controller.base;
 
-import com.dmall.rdp.voucher.pojo.vo.voucher.BetweenDateVo;
-import com.dmall.rdp.voucher.web.bind.BetweenDateBinder;
-import com.dmall.rdp.voucher.web.bind.DateBinder;
-import com.dmall.rdp.voucher.web.bind.LocalDateTimeBinder;
+import com.travel.pojo.BetweenDateVo;
+import com.travel.web.bind.BetweenDateBinder;
+import com.travel.web.bind.DateBinder;
+import com.travel.web.bind.LocalDateTimeBinder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.WebDataBinder;

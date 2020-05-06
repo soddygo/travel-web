@@ -1,10 +1,7 @@
 package com.travel.web.bind;
 
-import com.dmall.rdp.voucher.common.i18n.LanguageContext;
-import com.dmall.rdp.voucher.common.i18n.MessageService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.beans.PropertyEditorSupport;
 import java.time.LocalDateTime;
@@ -19,8 +16,6 @@ import java.time.format.DateTimeFormatter;
 @Slf4j
 public class LocalDateTimeBinder extends PropertyEditorSupport {
 
-    @Autowired
-    private MessageService messageService;
 
     @Override
     public void setAsText(String text) throws IllegalArgumentException {
@@ -42,11 +37,10 @@ public class LocalDateTimeBinder extends PropertyEditorSupport {
 
                     return;
                 } catch (Exception e) {
-
+                    throw new RuntimeException(e);
                 }
             }
 
-            throw new RuntimeException(messageService.getMessage("voucher.exception.parameter.localDateTImeInvalid", new Object[]{text}, LanguageContext.getLanguageI18Dto()));
 
         }
     }
