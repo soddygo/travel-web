@@ -2,18 +2,19 @@
 spring:
   profiles:
     active: ${env},rpc-${env},dao-${env},mq-${env},service-${env}
-  cache:
-    type: caffeine
-    cache-names:
-      - queryCascaderBusinessType
-      - queryOneByReferBillNo
-      - queryListByAlarmEnum
-    caffeine:
-      spec: initialCapacity=50,maximumSize=500,expireAfterWrite=60s
+#  cache:
+#    type: caffeine
+#    cache-names:
+#      - queryCascaderBusinessType
+#      - queryOneByReferBillNo
+#      - queryListByAlarmEnum
+#    caffeine:
+#      spec: initialCapacity=50,maximumSize=500,expireAfterWrite=60s
 
 # 默认tomcat启动端口
 server:
   port: 8080
+
 
 # 自定义文件，详情请见:https://blog.csdn.net/AaronSimon/article/details/82710792
 logging:

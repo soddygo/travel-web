@@ -2,7 +2,7 @@
 <configuration>
     <property name="localDateTime" value="%d{yyyy-MM-dd}"/>
     <property name="logPattern"
-              value="[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%C] [%X{tid}] [%X{sid}] - %m%n"/>
+              value="[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%C] - %m%n"/>
     <property name="charSet" value="UTF-8"/>
     <property name="maxHistory" value="7"/>
 
@@ -11,13 +11,14 @@
     <springProperty scope="context" name="log.sql.level" source="log.sql.level"/>
     <springProperty scope="context" name="log.web.level" source="log.web.level"/>
 
-    <property name="logPath" value="/web/logs/app/"/>
+    <property name="logPath" value="${file.separator}web${file.separator}"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>${logPattern}</pattern>
         </encoder>
     </appender>
+
     <root level="${log.sql.level}">
         <if condition='"${log.sql.level}".equals("DEBUG")'>
             <then>
