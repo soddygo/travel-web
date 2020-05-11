@@ -37,6 +37,7 @@
 
         <commons-io.version>2.6</commons-io.version>
         <commons-codec.version>1.12</commons-codec.version>
+        <logback.version>1.2.3</logback.version>
 
     </properties>
 
@@ -52,6 +53,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
             </dependency>
 
             <dependency>
@@ -117,13 +122,12 @@
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
-                <version>1.2.3</version>
+                <version>${logback.version}</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>1.2.3</version>
-                <scope>test</scope>
+                <version>${logback.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
