@@ -35,7 +35,7 @@
         <commons.lang3.version>3.7</commons.lang3.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
 
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <commons-codec.version>1.12</commons-codec.version>
         <logback.version>1.2.3</logback.version>
 
